@@ -1,0 +1,15 @@
+[Android & iOS]
+Add app icon found in graphics folder
+
+[Android & iOS]
+Changed bundle identifier
+
+[Android & iOS]
+Updated versions
+
+[Android & iOS]
+Changed app display name
+
+[Android]
+Added to proguard-rules.pro
+  -keep class io.realm.react.**

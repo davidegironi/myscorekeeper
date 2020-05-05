@@ -1,0 +1,60 @@
+{
+  "name": "myscorekeeper",
+  "description": "A simple Score Keeper app",
+  "version": "1.0.1",
+  "author": {
+    "name": "Davide Gironi"
+  },
+  "homepage": "https://github.com/davidegironi/myscorekeeper",
+  "license": "GPLv3",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "lint": "eslint ./src",
+    "androidrelease": "cd android && ./gradlew clean && ./gradlew bundleRelease && ./gradlew assembleRelease && cd .. && cp android/app/build/outputs/apk/release/app-release.apk release/android/appdressbook-$npm_package_version.apk && cp android/app/build/outputs/bundle/release/app-release.aab release/android/appdressbook-$npm_package_version.aab",
+    "androidreleaseinstallfirstdevice": "adb devices | head -n 2| tail -n 2 | cut -sf 1 | xargs -I {} adb -s {} install release/android/appdressbook-$npm_package_version.apk",
+    "podupdate": "cd ios && pod install && cd .."
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.9.0",
+    "@react-native-community/masked-view": "^0.1.9",
+    "@react-navigation/native": "^5.1.6",
+    "@react-navigation/stack": "^5.2.11",
+    "axios": "^0.19.2",
+    "blueimp-md5": "^2.13.0",
+    "faker": "^4.1.0",
+    "ismounted": "^0.1.6",
+    "moment": "^2.24.0",
+    "react": "16.11.0",
+    "react-native": "0.62.2",
+    "react-native-fs": "^2.16.6",
+    "react-native-gesture-handler": "^1.6.1",
+    "react-native-keep-awake": "^4.0.0",
+    "react-native-reanimated": "^1.8.0",
+    "react-native-safe-area-context": "^0.7.3",
+    "react-native-screens": "^2.7.0",
+    "react-native-toast-message": "^1.3.0",
+    "realm": "^5.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/runtime": "^7.9.0",
+    "@react-native-community/eslint-config": "^1.1.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "metro-react-native-babel-preset": "^0.59.0",
+    "react-native-rename": "^2.4.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
