@@ -1,7 +1,6 @@
 // Copyright (c) 2020 Davide Gironi
 // Please refer to LICENSE file for licensing information.
 
-const remoteStorage = 'gs://myscorekeeper-9f2b1.appspot.com';
 const remoteBucketFolder = 'backups';
 const remoteFilePrefix = 'db-';
 const remoteFileExtention = '.realm';
@@ -12,6 +11,7 @@ const enableFiletokenCheck = true;
 // overridable settings
 let apifirebasesecret = null;
 let backupdatabase = {
+  remotestorage: null,
   fileidlength: 0,
   fileidsecret: null
 };
@@ -31,9 +31,9 @@ if (config != null) {
  */
 module.exports = {
   apifirebasesecret,
+  remoteStorage: backupdatabase.remotestorage,
   fileidlength: backupdatabase.fileidlength,
   fileidsecret: backupdatabase.fileidsecret,
-  remoteStorage,
   remoteBucketFolder,
   remoteFilePrefix,
   remoteFileExtention,

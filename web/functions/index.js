@@ -23,8 +23,8 @@ const config = require('./config');
 
 const {
   apifirebasesecret,
-  fileidlength,
-  fileidsecret,
+  fileIdLength,
+  fileIdSecret,
   remoteStorage,
   remoteBucketFolder,
   remoteFilePrefix,
@@ -88,7 +88,7 @@ app.post('/api/backupfile', (req, res) => {
   const busboy = new Busboy({ headers: req.headers });
 
   // generate a random filename
-  const nanoidgenerator = nanoid.customAlphabet('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', fileidlength);
+  const nanoidgenerator = nanoid.customAlphabet('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', fileIdLength);
   const fileidnew = nanoidgenerator();
   const filename = remoteFilePrefix + fileidnew + remoteFileExtention;
   const filepath = `${tempDir}/${filename}`;
@@ -106,7 +106,7 @@ app.post('/api/backupfile', (req, res) => {
         return;
       }
       // check the filetoken
-      const filetokencheck = md5(filecontent, fileidsecret);
+      const filetokencheck = md5(filecontent, fileIdSecret);
       if (filetokencheck !== filetoken && enableFiletokenCheck) {
         res.status(500).send('Invalid FileToken.');
       } else {
