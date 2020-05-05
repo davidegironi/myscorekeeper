@@ -13,8 +13,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "lint": "eslint ./src",
-    "androidrelease": "cd android && ./gradlew clean && ./gradlew bundleRelease && ./gradlew assembleRelease && cd .. && cp android/app/build/outputs/apk/release/app-release.apk release/android/appdressbook-$npm_package_version.apk && cp android/app/build/outputs/bundle/release/app-release.aab release/android/appdressbook-$npm_package_version.aab",
-    "androidreleaseinstallfirstdevice": "adb devices | head -n 2| tail -n 2 | cut -sf 1 | xargs -I {} adb -s {} install release/android/appdressbook-$npm_package_version.apk",
+    "androidrelease": "cd android && ./gradlew clean && ./gradlew bundleRelease && ./gradlew assembleRelease && cd .. && cp android/app/build/outputs/apk/release/app-release.apk release/android/myscorekeeper-$npm_package_version.apk && cp android/app/build/outputs/bundle/release/app-release.aab release/android/myscorekeeper-$npm_package_version.aab",
+    "androidreleaseinstallfirstdevice": "adb devices | head -n 2| tail -n 2 | cut -sf 1 | xargs -I {} adb -s {} install release/android/myscorekeeper-$npm_package_version.apk",
     "podupdate": "cd ios && pod install && cd .."
   },
   "dependencies": {
