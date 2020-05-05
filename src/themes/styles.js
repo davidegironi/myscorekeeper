@@ -226,11 +226,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold'
   },
-  gametooltextsmall:
-  {
-    textAlign: 'center',
-    fontSize: 12
-  },
   gametoolbutton:
   {
     width: 50

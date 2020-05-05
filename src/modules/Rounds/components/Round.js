@@ -193,17 +193,9 @@ export default function Round() {
     return (
       <View style={s.gametoolcontainer}>
         <View style={s.gametooltextcontainer}>
-          {dicevalue == null
-            ? (
-              <Text style={s.gametooltextsmall}>
-                {I18n.t('round.dicepress')}
-              </Text>
-            )
-            : (
-              <Text style={s.gametooltext}>
-                {dicevalue}
-              </Text>
-            )}
+          <Text style={s.gametooltext}>
+            {dicevalue != null ? dicevalue : '-'}
+          </Text>
         </View>
         <View style={s.gametoolbutton}>
           <TouchableOpacity

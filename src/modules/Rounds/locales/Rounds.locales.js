@@ -15,7 +15,6 @@ export default {
       sortpointsascending: '+ Points',
       sortpointsdescending: '- Points',
       score: 'Score',
-      dicepress: 'tap the dice to generate a random value',
       pluspoint: 'points',
       minuspoint: 'points',
       alertstartstopaction: 'Round status',
