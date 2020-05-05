@@ -411,7 +411,7 @@ export default function Game() {
                         underlineColorAndroid="transparent"
                         returnKeyType="done"
                         onChangeText={(text) => setObj(
-                          { ...obj, dicemin: text.length === 0 ? null : parseInt(text, 10) }
+                          { ...obj, dicemin: text.length === 0 ? null : parseInt(text, 10) || 1 }
                         )}
                       />
                     </View>
@@ -434,7 +434,7 @@ export default function Game() {
                         underlineColorAndroid="transparent"
                         returnKeyType="done"
                         onChangeText={(text) => setObj(
-                          { ...obj, dicemax: text.length === 0 ? null : parseInt(text, 10) }
+                          { ...obj, dicemax: text.length === 0 ? null : parseInt(text, 10) || 6 }
                         )}
                       />
                     </View>
@@ -499,7 +499,7 @@ export default function Game() {
                         onChangeText={(text) => setObj(
                           {
                             ...obj,
-                            countdowntimerdefaultsec: text.length === 0 ? null : parseInt(text, 10)
+                            countdowntimerdefaultsec: text.length === 0 ? null : parseInt(text, 10) || 10
                           }
                         )}
                       />

@@ -181,10 +181,7 @@ export default function Points() {
                         {
                           text: I18n.t('appmain.buttonok'),
                           onPress: () => {
-                            const points = db.Points.list('id != $0', rowid);
-                            db.Rounds.update({
-                              points
-                            }, roundid);
+                            db.Points.remove(rowid);
                             setForcerefresh(!forcerefresh);
                             setSelectedpointsid([]);
                           }

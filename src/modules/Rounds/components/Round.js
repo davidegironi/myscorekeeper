@@ -397,7 +397,8 @@ export default function Round() {
                               if (obj.players.length === 1) {
                                 ToastHelper.showAlertMessage(I18n.t('round.errordeleteplayer'));
                               } else {
-                                const currentplayersquery = obj.players.map((x) => `id == '${x.id}'`).join(' OR ');
+                                const currentplayersquery = obj.players
+                                  .map((x) => `id == '${x.id}'`).join(' OR ');
                                 const players = db.Players.list(
                                   `${currentplayersquery != null ? `(${currentplayersquery}) AND ` : null
                                   }id != $0`, rowid

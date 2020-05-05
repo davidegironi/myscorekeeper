@@ -221,9 +221,22 @@ export default function Match() {
                         {
                           text: I18n.t('appmain.buttonok'),
                           onPress: () => {
-                            db.Players.removeAll(rowid);
-                            const roundsids = db.Rounds.list('players.@count == 0').map((round) => round.id);
-                            roundsids.forEach((roundsid) => db.Rounds.removeAll(roundsid));
+                            db.Players.remove(rowid);
+                            // remove rounds with not player
+                            const roundsids = db.Rounds.list('players.@count == 0')
+                              .map((round) => round?.id);
+                            roundsids.forEach((roundid) => {
+                              const round = db.Rounds.find(roundid);
+                              // remove points
+                              round.points.forEach((point) => {
+                                db.Points.remove(point?.id);
+                              });
+                              // remove round
+                              db.Rounds.remove(roundid);
+                            });
+                            const pointsids = db.Points.list('player == null')
+                              .map((point) => point?.id);
+                            pointsids.forEach((pointid) => db.Points.remove(pointid));
                             setForcerefresh(!forcerefresh);
                             setSelectedplayersid([]);
                           }
@@ -373,7 +386,13 @@ export default function Match() {
                         {
                           text: I18n.t('appmain.buttonok'),
                           onPress: () => {
-                            db.Rounds.removeAll(rowid);
+                            const round = db.Rounds.find(rowid);
+                            // remove points
+                            round.points.forEach((point) => {
+                              db.Points.remove(point?.id);
+                            });
+                            // remove round
+                            db.Rounds.remove(rowid);
                             setForcerefresh(!forcerefresh);
                             setSelectedroundsid([]);
                           }

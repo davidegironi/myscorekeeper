@@ -164,7 +164,7 @@ export default function Point() {
             returnKeyType="done"
             ref={pointRef}
             onChangeText={(text) => setObj(
-              { ...obj, point: text.length === 0 ? null : Math.abs(parseInt(text, 10)) }
+              { ...obj, point: text.length === 0 ? null : Math.abs(parseInt(text, 10) || 0) }
             )}
           />
         </View>

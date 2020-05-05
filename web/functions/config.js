@@ -32,8 +32,8 @@ if (config != null) {
 module.exports = {
   apifirebasesecret,
   remoteStorage: backupdatabase.remotestorage,
-  fileidlength: backupdatabase.fileidlength,
-  fileidsecret: backupdatabase.fileidsecret,
+  fileIdLength: backupdatabase.fileidlength,
+  fileIdSecret: backupdatabase.fileidsecret,
   remoteBucketFolder,
   remoteFilePrefix,
   remoteFileExtention,

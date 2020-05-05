@@ -161,6 +161,8 @@ export default function Games() {
                         {
                           text: I18n.t('appmain.buttonok'),
                           onPress: () => {
+                            // const game = db.Games.find(rowid);
+                            // game.matches.forEach((match) => )
                             db.Games.removeAll(rowid);
                             setForcerefresh(!forcerefresh);
                             setSelectedgamesid([]);
