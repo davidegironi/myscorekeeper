@@ -23,7 +23,6 @@ import Moment from 'moment';
 import KeepAwake from 'react-native-keep-awake';
 
 // load contexts
-import { ScrollView } from 'react-native-gesture-handler';
 import MainContext from '../../../contexts/MainContext';
 
 // load settings
@@ -35,6 +34,7 @@ import s from '../../../themes/styles';
 import ToastHelper from '../../../helpers/Toast.helpers';
 import ColorsHelper from '../../../helpers/Colors.helpers';
 import RoundHelper from '../helpers/Rounds.helpers';
+import SettingsHelper from '../../Settings/helpers/Settings.helpers';
 
 // load pages
 import navpages from '../../AppMain/components/AppNavigator.pages';
@@ -61,6 +61,7 @@ const imageTimeroff = require('../../../images/timeroff.png');
 export default function Round() {
   const { state } = useContext(MainContext);
   const { db } = state;
+  const { settings } = state;
   const navigation = useNavigation();
   const route = useRoute();
   const isFocused = useIsFocused();
@@ -176,11 +177,13 @@ export default function Round() {
 
   // effects - keep awake the screen
   useEffect(() => {
-    KeepAwake.activate();
+    if (obj != null) {
+      if (settings.alwaysonwhileplaying && obj.isopen) { KeepAwake.activate(); }
+    }
     return () => {
-      KeepAwake.deactivate();
+      if (obj != null) { KeepAwake.deactivate(); }
     };
-  }, []);
+  }, [obj]);
 
   /**
    * Dice tool component

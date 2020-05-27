@@ -77,7 +77,7 @@ export default function AppMain() {
     }
   }, [db]);
 
-  // effects
+  // effects - settings
   useEffect(() => {
     if (!isMounted.current) { return; }
 

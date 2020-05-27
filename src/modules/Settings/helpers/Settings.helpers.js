@@ -40,7 +40,8 @@ module.exports = {
       let settings = {
         showsplashscreen: false,
         latestbackupdate: null,
-        latestbackupfileid: null
+        latestbackupfileid: null,
+        alwaysonwhileplaying: true
       };
       // load settings from storage
       const value = await StorageHelper.getItem('@store:settings');

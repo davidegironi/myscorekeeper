@@ -9,7 +9,8 @@ export default {
     settings: {
       info: 'Info',
       config: 'Config',
-      showsplashscreen: 'Show Splash Screen',
+      alwaysonwhileplaying: 'Screen always on while playing',
+      showsplashscreen: 'Show splash screen',
       database: 'Database',
       backupandrestore: 'Backup and restore',
       populatedata: 'Populate data',

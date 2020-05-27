@@ -265,6 +265,22 @@ export default function Settings() {
         {
           id: 1,
           type: 'switch',
+          text: I18n.t('settings.alwaysonwhileplaying'),
+          value: settings.alwaysonwhileplaying,
+          onPress: () => {
+            // update the settings
+            const newsettings = settings;
+            newsettings.alwaysonwhileplaying = !settings.alwaysonwhileplaying;
+            // save settings
+            SettingsHelper.setSettings(dispatch, newsettings)
+              .catch((err) => {
+                ToastHelper.showAlertMessage(err);
+              });
+          }
+        },
+        {
+          id: 2,
+          type: 'switch',
           text: I18n.t('settings.showsplashscreen'),
           value: settings.showsplashscreen,
           onPress: () => {
