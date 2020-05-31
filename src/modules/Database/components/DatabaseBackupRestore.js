@@ -9,8 +9,7 @@ import {
   View,
   Platform,
   Alert,
-  StyleSheet,
-  ScrollViewstyle
+  StyleSheet
 } from 'react-native';
 import useIsMounted from 'ismounted';
 import Moment from 'moment';
@@ -159,7 +158,7 @@ export default function DatabaseBackupRestore() {
                         ToastHelper.showAlertMessage(err);
                       });
                     Alert.alert(
-                      I18n.t('databasebackuprestore.alertrestoredatabase'),
+                      I18n.t('databasebackuprestore.alertbackupdatabase'),
                       I18n.t('databasebackuprestore.backuptocloudsuccess'),
                       [
                         {
@@ -359,7 +358,6 @@ export default function DatabaseBackupRestore() {
 
         <View style={styles.sectionsseparator} />
 
-
         <Text style={styles.sectiontitle}>
           {I18n.t('databasebackuprestore.backup')}
         </Text>
@@ -428,6 +426,8 @@ export default function DatabaseBackupRestore() {
           />
         </View>
 
+        <View style={styles.sectionsbottom} />
+
       </KeyboardAvoidingView>
     </ScrollView>
   );
@@ -457,6 +457,9 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderBottomColor: theme.COLOR_BACKUPRESTORE_SEPARATORCOLOR,
     borderBottomWidth: 1,
+  },
+  sectionsbottom: {
+    marginVertical: 10
   },
   progresscontainer: {
     flex: 1,

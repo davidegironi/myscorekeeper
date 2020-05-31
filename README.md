@@ -13,6 +13,11 @@ My Score Keeper is Open Source, and it's built using [React Native](https://reac
 * **App Store** I don't have an Apple Developer Account, donations are welcome.
 
 ## Screenshot
+![Games](screenshots/small/ios_games.png)
+![Game](screenshots/small/ios_game.png)
+![Match](screenshots/small/ios_match.png)
+![Round](screenshots/small/ios_round.png)
+![Settings](screenshots/small/ios_settings.png)
 
 ## Requirements
 * Android minSdkVersion = 16
