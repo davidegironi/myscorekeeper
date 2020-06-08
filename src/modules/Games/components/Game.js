@@ -499,7 +499,9 @@ export default function Game() {
                         onChangeText={(text) => setObj(
                           {
                             ...obj,
-                            countdowntimerdefaultsec: text.length === 0 ? null : parseInt(text, 10) || 10
+                            countdowntimerdefaultsec: text.length === 0
+                              ? null
+                              : parseInt(text, 10) || 10
                           }
                         )}
                       />

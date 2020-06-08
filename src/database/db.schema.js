@@ -151,7 +151,8 @@ export const databaseOptions = {
     PointsSchema
   ],
   deleteRealmIfMigrationNeeded: true,
-  schemaVersion: 1
+  schemaVersion: 1,
+  shouldCompactOnLaunch: () => true
 };
 
 /**

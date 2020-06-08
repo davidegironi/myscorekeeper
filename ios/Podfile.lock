@@ -238,7 +238,7 @@ PODS:
   - React-jsinspector (0.62.2)
   - react-native-keep-awake (4.0.0):
     - React
-  - react-native-safe-area-context (0.7.3):
+  - react-native-safe-area-context (3.0.2):
     - React
   - React-RCTActionSheet (0.62.2):
     - React-Core/RCTActionSheetHeaders (= 0.62.2)
@@ -299,10 +299,10 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RealmJS (5.0.4):
+  - RealmJS (6.0.2):
     - GCDWebServer
     - React
-  - RNCAsyncStorage (1.10.0):
+  - RNCAsyncStorage (1.11.0):
     - React
   - RNCMaskedView (0.1.10):
     - React
@@ -310,9 +310,9 @@ PODS:
     - React
   - RNGestureHandler (1.6.1):
     - React
-  - RNReanimated (1.8.0):
+  - RNReanimated (1.9.0):
     - React
-  - RNScreens (2.7.0):
+  - RNScreens (2.8.0):
     - React
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -490,7 +490,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 1540d1c01bb493ae3124ed83351b1b6a155db7da
   React-jsinspector: 512e560d0e985d0e8c479a54a4e5c147a9c83493
   react-native-keep-awake: afad8a51dfef9fe9655a6344771be32c8596d774
-  react-native-safe-area-context: e200d4433aba6b7e60b52da5f37af11f7a0b0392
+  react-native-safe-area-context: b11a34881faac509cad5578726c98161ad4d275c
   React-RCTActionSheet: f41ea8a811aac770e0cc6e0ad6b270c644ea8b7c
   React-RCTAnimation: 49ab98b1c1ff4445148b72a3d61554138565bad0
   React-RCTBlob: a332773f0ebc413a0ce85942a55b064471587a71
@@ -501,13 +501,13 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RealmJS: 52b98789c32fa953ba441afd3ca6ac4762f806e9
-  RNCAsyncStorage: 6d99641f8e6f15d169d695d8ef184bf187903f11
+  RealmJS: fa482f7607e70a17abfc5e7817cfca1042186b62
+  RNCAsyncStorage: d059c3ee71738c39834a627476322a5a8cd5bf36
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNFS: 2bd9eb49dc82fa9676382f0585b992c424cd59df
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
-  RNReanimated: 955cf4068714003d2f1a6e2bae3fb1118f359aff
-  RNScreens: cf198f915f8a2bf163de94ca9f5bfc8d326c3706
+  RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
+  RNScreens: 62211832af51e0aebcf6e8c36bcf7dd65592f244
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 

@@ -34,7 +34,6 @@ import s from '../../../themes/styles';
 import ToastHelper from '../../../helpers/Toast.helpers';
 import ColorsHelper from '../../../helpers/Colors.helpers';
 import RoundHelper from '../helpers/Rounds.helpers';
-import SettingsHelper from '../../Settings/helpers/Settings.helpers';
 
 // load pages
 import navpages from '../../AppMain/components/AppNavigator.pages';
@@ -116,9 +115,13 @@ export default function Round() {
             points: RoundHelper.getPointsbyplayerid(objfind, row.id)
           }));
         let playersloadsorted = playersload;
-        if (listplayerssort === 'name') playersloadsorted = playersload.sort((a, b) => ((a.row.name > b.row.name) ? -1 : 1));
-        else if (listplayerssort === 'pointsascending') playersloadsorted = playersload.sort((a, b) => ((a.row.points > b.row.points) ? -1 : 1));
-        else if (listplayerssort === 'pointsdescending') playersloadsorted = playersload.sort((a, b) => ((a.row.points > b.row.points) ? 1 : -1));
+        if (listplayerssort === 'name') {
+          playersloadsorted = playersload.sort((a, b) => (a.row.name > b.row.name ? 1 : -1));
+        } else if (listplayerssort === 'pointsascending') {
+          playersloadsorted = playersload.sort((a, b) => (b.points - a.points));
+        } else if (listplayerssort === 'pointsdescending') {
+          playersloadsorted = playersload.sort((a, b) => (a.points - b.points));
+        }
         setListplayers(
           playersloadsorted
         );
@@ -133,7 +136,7 @@ export default function Round() {
             row,
             points: RoundHelper.getPointsbyplayerid(objfind, row.id)
           }))
-          .sort((a, b) => ((a.row.name > b.row.name) ? -1 : 1));
+          .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1));
         setListplayersadd(
           playersadditionalsorted
         );
@@ -153,7 +156,7 @@ export default function Round() {
               row,
               points: 0
             }))
-            .sort((a, b) => ((a.row.name > b.row.name) ? -1 : 1))
+            .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1))
         );
       }
     }
@@ -405,6 +408,21 @@ export default function Round() {
                                       rowid: r.id,
                                       row: r
                                     }))
+                                    .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1))
+                                );
+                                // get all players
+                                const playerslistedids = players
+                                  .map((r) => r.id);
+                                const playersadditionalsorted = match.players
+                                  .filter((r) => !playerslistedids.includes(r.id))
+                                  .map((rowplayer) => ({
+                                    rowid: rowplayer.id,
+                                    row: rowplayer,
+                                    points: 0
+                                  }))
+                                  .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1));
+                                setListplayersadd(
+                                  playersadditionalsorted
                                 );
                               }
                             } else if (id != null) {
@@ -443,13 +461,44 @@ export default function Round() {
                   paddingText={5}
                   paddingImage={5}
                   onPress={() => {
-                    db.Rounds.update({
-                      players: [
-                        ...obj.players,
-                        row
-                      ]
-                    }, id);
-                    setForcerefresh(!forcerefresh);
+                    if (id == null) {
+                      const currentplayersquery = `id == '${rowid}' OR ${obj.players
+                        .map((x) => `id == '${x.id}'`).join(' OR ')}`;
+                      const players = db.Players.list(
+                        `${currentplayersquery != null ? `(${currentplayersquery})` : null}`
+                      );
+                      setObj({ ...obj, players });
+                      setListplayers(
+                        players
+                          .map((r) => ({
+                            rowid: r.id,
+                            row: r
+                          }))
+                          .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1))
+                      );
+                      // get all players
+                      const playerslistedids = players
+                        .map((r) => r.id);
+                      const playersadditionalsorted = match.players
+                        .filter((r) => !playerslistedids.includes(r.id))
+                        .map((rowplayer) => ({
+                          rowid: rowplayer.id,
+                          row: rowplayer,
+                          points: 0
+                        }))
+                        .sort((a, b) => ((a.row.name > b.row.name) ? 1 : -1));
+                      setListplayersadd(
+                        playersadditionalsorted
+                      );
+                    } else if (id != null) {
+                      db.Rounds.update({
+                        players: [
+                          ...obj.players,
+                          row
+                        ]
+                      }, id);
+                      setForcerefresh(!forcerefresh);
+                    }
                   }}
                 />
               </View>
@@ -704,7 +753,7 @@ export default function Round() {
         )
         : null}
 
-      {isediting
+      {isediting && listplayersadd?.length > 0
         ? (
           <View style={s.listcontainer}>
             <FlatList

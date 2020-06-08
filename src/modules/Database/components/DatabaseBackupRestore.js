@@ -319,6 +319,7 @@ export default function DatabaseBackupRestore() {
               autoCorrect={false}
               underlineColorAndroid="transparent"
               returnKeyType="done"
+              autoCapitalize="none"
               onChangeText={(text) => setRestorefileid(text)}
             />
           </View>
@@ -415,7 +416,7 @@ export default function DatabaseBackupRestore() {
                     {
                       text: I18n.t('appmain.buttonok'),
                       onPress: () => {
-                      // run the backup, gives the backup page time to be shown
+                        // run the backup, gives the backup page time to be shown
                         backupDb(settings.latestbackupfileid);
                       }
                     },

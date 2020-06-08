@@ -11,7 +11,7 @@ module.exports = {
   getWinnerplayersids(round, winnerorderdescending) {
     // get the match winners
     let winnerplayersids = [];
-    let actualbestplayerssum = 0;
+    let actualbestplayerssum = null;
     if (round?.players != null) {
       let haspoints = false;
       round.players.forEach((player) => {
@@ -21,6 +21,9 @@ module.exports = {
             .filter((point) => point.player?.id === player.id)
             .reduce((sum, current) => sum + current.point, 0)
           : 0);
+        if (actualbestplayerssum == null) {
+          actualbestplayerssum = currentplayerpointsum;
+        }
         if (currentplayerpointsum === actualbestplayerssum) {
           winnerplayersids.push(player.id);
         } else if (winnerorderdescending && currentplayerpointsum > actualbestplayerssum) {
