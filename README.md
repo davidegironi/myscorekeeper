@@ -9,7 +9,7 @@ The free Backup and Restore cloud agent allows your data to be upload on a tempo
 My Score Keeper is Open Source, and it's built using [React Native](https://reactnative.dev/).
 
 ## Download
-* **Google Play Store** ...link to come
+* **[Google Play Store](https://play.google.com/store/apps/details?id=com.davidegironi.myscorekeeper)**
 * **App Store** I don't have an Apple Developer Account, donations are welcome.
 
 ## Screenshot
