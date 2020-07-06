@@ -61,6 +61,3 @@ buck-out/
 # Configs
 config.developement*
 config.production*
-
-# Blog
-docs/blog/
