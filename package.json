@@ -27,7 +27,7 @@
     "blueimp-md5": "^2.13.0",
     "faker": "^4.1.0",
     "ismounted": "^0.1.6",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "react": "^16.13.1",
     "react-native": "0.62.2",
     "react-native-fs": "^2.16.6",
