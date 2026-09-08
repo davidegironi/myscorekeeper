@@ -1,0 +1,81 @@
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build.gradle b/node_modules/@nozbe/watermelondb/native/android/build.gradle
+index a45cfe0..f0ec652 100644
+--- a/node_modules/@nozbe/watermelondb/native/android/build.gradle
++++ b/node_modules/@nozbe/watermelondb/native/android/build.gradle
+@@ -32,6 +32,10 @@ android {
+         versionCode 1
+         versionName "1.0"
+     }
++
++    buildFeatures {
++        buildConfig = true
++    }
+ }
+ 
+ dependencies {
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+new file mode 100644
+index 0000000..9e26dfe
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json
+@@ -0,0 +1 @@
++{}
+\ No newline at end of file
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar
+new file mode 100644
+index 0000000..037f6ca
+Binary files /dev/null and b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/compile_r_class_jar/debug/generateDebugRFile/R.jar differ
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/compile_symbol_list/debug/generateDebugRFile/R.txt
+new file mode 100644
+index 0000000..e69de29
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+new file mode 100644
+index 0000000..4aa15fb
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties
+@@ -0,0 +1 @@
++#Thu Aug 13 22:39:40 CEST 2026
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+new file mode 100644
+index 0000000..462b250
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/incremental/debug/packageDebugResources/merger.xml
+@@ -0,0 +1,2 @@
++<?xml version="1.0" encoding="utf-8"?>
++<merger version="3"><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Projects\App\myscorekeeper\node_modules\@nozbe\watermelondb\native\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="main" generated-set="main$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="D:\Projects\App\myscorekeeper\node_modules\@nozbe\watermelondb\native\android\src\main\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"><source path="D:\Projects\App\myscorekeeper\node_modules\@nozbe\watermelondb\native\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="debug" generated-set="debug$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"><source path="D:\Projects\App\myscorekeeper\node_modules\@nozbe\watermelondb\native\android\src\debug\res"/></dataSet><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated$Generated" generated="true" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~"/><dataSet aapt-namespace="http://schemas.android.com/apk/res-auto" config="generated" generated-set="generated$Generated" ignore_pattern="!.svn:!.git:!.ds_store:!*.scc:.*:&lt;dir>_*:!CVS:!thumbs.db:!picasa.ini:!*~:!&lt;dir>navigation"/><mergedItems/></merger>
+\ No newline at end of file
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Connected.class b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Connected.class
+new file mode 100644
+index 0000000..e37feb7
+Binary files /dev/null and b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Connected.class differ
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Waiting.class b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Waiting.class
+new file mode 100644
+index 0000000..6b2398b
+Binary files /dev/null and b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection$Waiting.class differ
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection.class b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection.class
+new file mode 100644
+index 0000000..ddb2b48
+Binary files /dev/null and b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes/com/nozbe/watermelondb/Connection.class differ
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+new file mode 100644
+index 0000000..78ac5b8
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt
+@@ -0,0 +1,2 @@
++R_DEF: Internal format may change without notice
++local
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+new file mode 100644
+index 0000000..08f4ebe
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt
+@@ -0,0 +1 @@
++0 Warning/Error
+\ No newline at end of file
+diff --git a/node_modules/@nozbe/watermelondb/native/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+new file mode 100644
+index 0000000..236785c
+--- /dev/null
++++ b/node_modules/@nozbe/watermelondb/native/android/build/intermediates/symbol_list_with_package_name/debug/generateDebugRFile/package-aware-r.txt
+@@ -0,0 +1 @@
++com.nozbe.watermelondb
