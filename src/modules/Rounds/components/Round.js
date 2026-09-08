@@ -18,7 +18,7 @@ import {
 import {
   useNavigation, useRoute, useIsFocused, StackActions
 } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 import Moment from 'moment';
 import KeepAwake from 'react-native-keep-awake';
 
@@ -432,7 +432,7 @@ export default function Round() {
                                 const players = obj.players
                                   .filter((x) => x.id !== rowid);
                                 const points = obj.points
-                                  .filter((x) => x.player.id !== rowid);
+                                  .filter((x) => x.player?.id !== rowid);
                                 db.Rounds.update({
                                   players,
                                   points
@@ -601,7 +601,7 @@ export default function Round() {
                     setForcerefresh(!forcerefresh);
                   } else {
                     db.Rounds.update(obj, id);
-                    navigation.navigate(
+                    navigation.popTo(
                       navpages.Match,
                       { refresh: true }
                     );
@@ -636,7 +636,7 @@ export default function Round() {
                             ...obj,
                             isopen: !obj.isopen
                           }, id);
-                          navigation.navigate(
+                          navigation.popTo(
                             navpages.Match,
                             { refresh: true }
                           );

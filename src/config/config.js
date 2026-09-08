@@ -11,23 +11,6 @@ const splashscreenTime = 2000;
 const theme = 'default';
 const populateDataEnabled = false;
 
-// overridable settings
-let backupdatabase = {
-  url: null,
-  fileidlength: 0,
-  fileidsecret: null,
-  fileretentiondays: 7
-};
-
-// select the proper config and override sections
-const configproduction = require('./config.production.js');
-
-let config = null;
-if (process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'production') { config = configproduction; }
-if (config != null) {
-  backupdatabase = config.backupdatabase;
-}
-
 /**
  * export the config
  */
@@ -40,6 +23,5 @@ module.exports = {
     : splashscreenTime),
   loadingTimeThreshold,
   theme,
-  populateDataEnabled,
-  backupdatabase
+  populateDataEnabled
 };

@@ -28,6 +28,9 @@ build/
 .gradle
 local.properties
 *.iml
+.cxx/
+.externalNativeBuild/
+captures/
 
 # node.js
 #
@@ -38,8 +41,16 @@ yarn-error.log
 # BUCK
 buck-out/
 \.buckd/
+
+# keystore
+keystore/
 *.keystore
 !debug.keystore
+!releasefallback.keystore
+
+# release signing secrets
+# Real signing credentials live here and must not be committed.
+release/release-secrets.properties
 
 # fastlane
 #

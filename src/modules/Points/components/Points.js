@@ -14,7 +14,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 import Moment from 'moment';
 
 // load contexts
@@ -102,7 +102,7 @@ export default function Points() {
       row
     } = item;
     const selected = selectedpointsid.includes(rowid);
-    const color = ColorsHelper.hashColor(row.player.id);
+    const color = ColorsHelper.hashColor(row.player?.id || rowid);
     const pointisplus = row.point >= 0;
     return (
       <TouchableOpacity

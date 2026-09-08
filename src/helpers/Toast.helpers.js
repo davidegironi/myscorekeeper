@@ -1,9 +1,23 @@
 // Copyright (c) 2020 Davide Gironi
 // Please refer to LICENSE file for licensing information.
 
-import Toast from 'react-native-toast-message';
+// NOTE: react-native-toast-message v2.x removed the v1 static `Toast.setRef` /
+// `Toast.show` API. We keep a reference to the mounted <Toast> instance here
+// (bound by AppMain via `<Toast ref={ToastHelper.setToastRef} />`) and call
+// `show` on it.
+let toastRef = null;
+
+/**
+ * Bind the mounted react-native-toast-message <Toast> instance.
+ * @param {*} ref
+ */
+function setToastRef(ref) {
+  toastRef = ref;
+}
 
 module.exports = {
+
+  setToastRef,
 
   /**
    * Show a info message
@@ -36,7 +50,8 @@ module.exports = {
    * @param {string} type
    */
   showMessage(title, message, type) {
-    Toast.show({
+    if (toastRef == null) { return; }
+    toastRef.show({
       type,
       position: 'top',
       text1: (title != null ? title : message),

@@ -19,7 +19,6 @@ import Settings from '../../Settings/components/Settings';
 import About from '../../About/components/About';
 import Privacy from '../../Privacy/components/Privacy';
 import Terms from '../../Terms/components/Terms';
-import DatabaseBackupRestore from '../../Database/components/DatabaseBackupRestore';
 import Games from '../../Games/components/Games';
 import Game from '../../Games/components/Game';
 import Match from '../../Matches/components/Match';
@@ -149,15 +148,6 @@ export default function AppNavigator() {
           component={Terms}
           options={{
             title: I18n.t('appnavigator.terms'),
-            headerStyle: styles.headerstyle,
-            headerTintColor: theme.COLOR_NAVIGATOR_HEADERTINTCOLOR
-          }}
-        />
-        <Stack.Screen
-          name={navpages.DatabaseBackupRestore}
-          component={DatabaseBackupRestore}
-          options={{
-            title: I18n.t('appnavigator.databasebackuprestore'),
             headerStyle: styles.headerstyle,
             headerTintColor: theme.COLOR_NAVIGATOR_HEADERTINTCOLOR
           }}

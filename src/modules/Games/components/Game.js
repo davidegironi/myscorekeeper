@@ -18,7 +18,7 @@ import {
   Switch
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 import Moment from 'moment';
 
 // load contexts
@@ -542,7 +542,7 @@ export default function Game() {
                   } else {
                     db.Games.update(obj, id);
                     if (edittools == null) {
-                      navigation.navigate(
+                      navigation.popTo(
                         navpages.Games,
                         { refresh: true }
                       );

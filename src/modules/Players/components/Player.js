@@ -13,7 +13,7 @@ import {
   ActivityIndicator,
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 
 // load contexts
 import MainContext from '../../../contexts/MainContext';
@@ -163,10 +163,10 @@ export default function Match() {
                       setId(obj.id);
                       setIsediting(false);
                       setForcerefresh(!forcerefresh);
-                      navigation.navigate(navpages.Match, { refresh: true });
+                      navigation.popTo(navpages.Match, { refresh: true });
                     } else {
                       db.Players.update(obj, id);
-                      navigation.navigate(navpages.Match, { refresh: true });
+                      navigation.popTo(navpages.Match, { refresh: true });
                     }
                   }}
                 />

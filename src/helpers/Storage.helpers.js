@@ -1,7 +1,7 @@
 // Copyright (c) 2020 Davide Gironi
 // Please refer to LICENSE file for licensing information.
 
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 module.exports = {
 

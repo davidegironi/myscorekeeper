@@ -9,7 +9,3 @@ Updated versions
 
 [Android & iOS]
 Changed app display name
-
-[Android]
-Added to proguard-rules.pro
-  -keep class io.realm.react.**

@@ -1,7 +1,7 @@
 {
   "name": "myscorekeeper",
   "description": "A simple Score Keeper app",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Davide Gironi"
   },
@@ -10,52 +10,55 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios": "react-native run-ios",
     "start": "react-native start",
     "lint": "eslint ./src",
-    "androidrelease": "cd android && ./gradlew clean && ./gradlew bundleRelease && ./gradlew assembleRelease && cd .. && cp android/app/build/outputs/apk/release/app-release.apk release/android/myscorekeeper-$npm_package_version.apk && cp android/app/build/outputs/bundle/release/app-release.aab release/android/myscorekeeper-$npm_package_version.aab",
-    "androidreleaseinstallfirstdevice": "adb devices | head -n 2| tail -n 2 | cut -sf 1 | xargs -I {} adb -s {} install release/android/myscorekeeper-$npm_package_version.apk",
-    "podupdate": "cd ios && pod install && cd ..",
-    "buildsmallscreenshots": "rm -rf screenshots/small/* && sips -Z 800 screenshots/*.png --out screenshots/small"
+    "androidrelease": "node release/scripts/build.js",
+    "androidreleaseinstallfirstdevice": "node release/scripts/install-first-device.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
-    "@react-native-community/async-storage": "^1.9.0",
-    "@react-native-community/masked-view": "^0.1.9",
-    "@react-navigation/native": "^5.1.6",
-    "@react-navigation/stack": "^5.2.11",
-    "axios": "^0.19.2",
-    "blueimp-md5": "^2.13.0",
-    "faker": "^4.1.0",
-    "ismounted": "^0.1.6",
-    "moment": "^2.24.0",
-    "react": "^16.13.1",
-    "react-native": "0.62.2",
-    "react-native-fs": "^2.16.6",
-    "react-native-gesture-handler": "^1.6.1",
+    "@faker-js/faker": "^8.4.1",
+    "@nozbe/watermelondb": "^0.28.0",
+    "@react-native-async-storage/async-storage": "^3.1.1",
+    "@react-navigation/native": "^7.3.16",
+    "@react-navigation/stack": "^7.10.22",
+    "moment": "^2.30.1",
+    "react": "19.2.3",
+    "react-native": "0.87.0",
+    "react-native-gesture-handler": "^3.1.0",
     "react-native-keep-awake": "^4.0.0",
-    "react-native-reanimated": "^1.8.0",
-    "react-native-safe-area-context": "^3.0.2",
-    "react-native-screens": "^2.7.0",
-    "react-native-toast-message": "^1.3.0",
-    "realm": "^6.0.2"
+    "react-native-safe-area-context": "^5.9.0",
+    "react-native-screens": "^4.27.0",
+    "react-native-toast-message": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/runtime": "^7.9.0",
-    "@react-native-community/eslint-config": "^1.1.0",
-    "@typescript-eslint/parser": "^3.1.0",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "babel-plugin-transform-remove-console": "^6.9.4",
-    "eslint": "^7.2.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^4.0.0",
-    "metro-react-native-babel-preset": "^0.59.0",
-    "react-native-rename": "^2.4.1"
+    "@babel/core": "^7.25.2",
+    "@babel/plugin-proposal-decorators": "^7.29.7",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.2.0",
+    "@react-native-community/cli-platform-android": "20.2.0",
+    "@react-native/babel-preset": "0.87.0",
+    "@react-native/eslint-config": "0.87.0",
+    "@react-native/metro-config": "^0.87.0",
+    "@react-native/eslint-plugin": "0.87.0",
+    "@react-native/typescript-config": "0.87.0",
+    "@typescript-eslint/eslint-plugin": "^8.67.0",
+    "@typescript-eslint/parser": "^8.67.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-ft-flow": "^2.0.3",
+    "eslint-plugin-jest": "^29.16.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-native": "^5.0.0",
+    "patch-package": "^8.0.1",
+    "prettier": "2.8.8",
+    "react-test-renderer": "19.2.3",
+    "typescript": "^6.0.3"
   },
-  "jest": {
-    "preset": "react-native"
+  "engines": {
+    "node": ">= 22.11.0"
   }
 }

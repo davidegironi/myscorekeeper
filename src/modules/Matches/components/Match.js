@@ -17,7 +17,7 @@ import {
   Image
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 import Moment from 'moment';
 
 // load contexts
@@ -480,7 +480,7 @@ export default function Match() {
                     setForcerefresh(!forcerefresh);
                   } else {
                     db.Matches.update(obj, id);
-                    navigation.navigate(
+                    navigation.popTo(
                       navpages.Game,
                       { refresh: true }
                     );

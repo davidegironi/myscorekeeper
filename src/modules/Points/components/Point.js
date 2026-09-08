@@ -13,7 +13,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 import Moment from 'moment';
 
 // load contexts
@@ -193,13 +193,13 @@ export default function Point() {
                     setId(obj.id);
                     setIsediting(false);
                     setForcerefresh(!forcerefresh);
-                    navigation.navigate(
+                    navigation.popTo(
                       navpages.Round,
                       { refresh: true }
                     );
                   } else {
                     db.Points.update(obj, id);
-                    navigation.navigate(
+                    navigation.popTo(
                       navpages.Points,
                       { refresh: true }
                     );

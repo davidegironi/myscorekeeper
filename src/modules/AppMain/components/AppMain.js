@@ -6,7 +6,7 @@ import {
   SafeAreaView,
   View
 } from 'react-native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 
 // load components
 import Toast from 'react-native-toast-message';
@@ -23,13 +23,14 @@ import AppNavigator from './AppNavigator';
 
 // load helpers
 import SettingsHelper from '../../Settings/helpers/Settings.helpers';
+import ToastHelper from '../../../helpers/Toast.helpers';
 
 // load reducers
 import reducerDb from '../../../database/db.reducers';
 import reducerSettings from '../../Settings/reducers/Settings.reducers';
 
 // load database model
-import { DbModel } from '../../../database/dg-realm-minigenericmodel';
+import { DbModel } from '../../../database/minigenericmodel';
 import { databaseOptions } from '../../../database/db.schema';
 
 /**
@@ -97,7 +98,7 @@ export default function AppMain() {
     return (
       <View style={{ flex: 1 }}>
         <AppSplash />
-        <Toast ref={(ref) => Toast.setRef(ref)} />
+        <Toast ref={ToastHelper.setToastRef} />
       </View>
     );
   }
@@ -108,7 +109,7 @@ export default function AppMain() {
       <SafeAreaView style={{ flex: 1 }}>
         <AppNavigator />
       </SafeAreaView>
-      <Toast ref={(ref) => Toast.setRef(ref)} />
+      <Toast ref={ToastHelper.setToastRef} />
     </MainContext.Provider>
   );
 }

@@ -7,7 +7,6 @@ import langSettings from '../modules/Settings/locales/Settings.locales';
 import langAbout from '../modules/About/locales/About.locales';
 import langPrivacy from '../modules/Privacy/locales/Privacy.locales';
 import langTerms from '../modules/Terms/locales/Terms.locales';
-import langDatabase from '../modules/Database/locales/Database.locales';
 import langGames from '../modules/Games/locales/Games.locales';
 import langMatches from '../modules/Matches/locales/Matches.locales';
 import langPlayers from '../modules/Players/locales/Players.locales';
@@ -21,7 +20,6 @@ const langen = {
   ...langAbout.en,
   ...langPrivacy.en,
   ...langTerms.en,
-  ...langDatabase.en,
   ...langGames.en,
   ...langMatches.en,
   ...langPlayers.en,

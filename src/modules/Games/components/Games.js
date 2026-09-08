@@ -11,7 +11,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
-import useIsMounted from 'ismounted';
+import useIsMounted from '../../../helpers/useIsMounted';
 
 // load contexts
 import MainContext from '../../../contexts/MainContext';

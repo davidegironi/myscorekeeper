@@ -8,4 +8,13 @@
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
 # Add any project specific keep options here:
--keep class io.realm.react.**
+
+# WatermelonDB
+-keep class com.nozbe.watermelondb.** { *; }
+-dontwarn com.nozbe.watermelondb.**
+
+# React Native KeepAwake
+-keep class com.corbt.keepawake.** { *; }
+
+# react-native-toast-message
+-keep class com.toastmessage.ToastPackage { *; }

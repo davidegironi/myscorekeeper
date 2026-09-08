@@ -7,13 +7,13 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.organizeImports": false
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
   "prettier.semi": true,
   "prettier.endOfLine": "lf",
   "prettier.singleQuote": true,
-  "eslint.packageManager": "yarn",
+  "eslint.packageManager": "npm",
   "eslint.format.enable": true,
   "eslint.alwaysShowStatus": true,
   "java.configuration.updateBuildConfiguration": "disabled",

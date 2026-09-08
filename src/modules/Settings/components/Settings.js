@@ -14,7 +14,7 @@ import {
   Alert
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 // load contexts
 import MainContext from '../../../contexts/MainContext';
@@ -221,19 +221,10 @@ export default function Settings() {
   };
 
   // build the database section
-  const databaseData = [
-    {
-      id: 1,
-      type: 'button',
-      text: I18n.t('settings.backupandrestore'),
-      onPress: () => {
-        navigation.navigate(navpages.DatabaseBackupRestore);
-      }
-    }
-  ];
+  const databaseData = [];
   if (Config.populateDataEnabled) {
     databaseData.push({
-      id: 2,
+      id: 1,
       type: 'button',
       text: I18n.t('settings.populatedata'),
       onPress: () => {
@@ -296,10 +287,12 @@ export default function Settings() {
         }
       ]
     },
-    {
-      title: I18n.t('settings.database'),
-      data: databaseData
-    },
+    ...(databaseData.length > 0
+      ? [{
+        title: I18n.t('settings.database'),
+        data: databaseData
+      }]
+      : []),
     {
       title: I18n.t('settings.info'),
       data: [
