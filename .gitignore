@@ -66,6 +66,10 @@ release/release-secrets.properties
 # Bundle artifact
 *.jsbundle
 
+# Android release artifacts
+release/android/*.apk
+release/android/*.aab
+
 # CocoaPods
 /ios/Pods/
 
